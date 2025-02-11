@@ -1,11 +1,20 @@
-<div class="main vh-100 w-100">
+<div class="main vh-100 overflow-auto w-100">
   <div class="container">
     <app-header/>
     <div class="row mt-4">
       <div class="col-3">
-        <app-users/>
+        @for (each of DUMMY_USERS; track each.id) {
+          <app-users [SelectedUser]="each?.id === selectedData?.id" [userData]="each" (select)="onSelectUser($event)"/>
+        }
       </div>
-      <div class="col-9"></div>
+
+      <div class="col-9">
+        @if (selectedData) {
+          <app-tasks [taskItem]="selectedData"/>
+        } @else {
+          <p class="text-white-50">Select a user to see the information</p>
+        }
+      </div>
     </div>
   </div>
 

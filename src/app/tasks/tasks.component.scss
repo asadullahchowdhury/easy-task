@@ -1,0 +1,8 @@
+.task-container{
+  height: 65vh;
+  background-color: rgba(44, 10, 76, 0.38);
+  overflow: auto;
+  &::-webkit-scrollbar{
+    display: none;
+  }
+}

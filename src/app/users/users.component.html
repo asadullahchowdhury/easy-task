@@ -1,6 +1,6 @@
-<div class="user-container ">
-  <button class="user-btn rounded-4" (click)="changeUser()">
-    <img width="32" height="32" [ngSrc]="imagePath()" [alt]="selectedUser().name"/>
-    <span>{{ selectedUser().name }}</span>
+<div class="user-container">
+  <button class="user-btn rounded-4 mb-2" (click)="getData(userData)" [class.active]="SelectedUser">
+    <img width="32" height="32" [ngSrc]="'/assets/users/' + userData.avatar" [alt]="userData.name"/>
+    <span>{{ userData.name }}</span>
   </button>
 </div>

@@ -1,1 +1,17 @@
-<p>tasks works!</p>
+<div class="task-container mb-3 p-3 rounded-5 bg-linear-to-r from-blue-500 to-green-500 h-64">
+  <div class="d-flex justify-content-between align-items-center border-bottom p-3 border-secondary text-white">
+    <div class="fs-4">{{ taskItem.name }}'s Task</div>
+    <button type="button" class="btn btn-outline-light px-3 rounded-4">Add Task</button>
+  </div>
+
+  <div class="p-3">
+    <ul class="list-unstyled p-0 m-0">
+      @for (each of selectedUserTask;track each.id){
+        <li>
+          <app-task-item [data]="each" (onComplete)="complete($event)"/>
+        </li>
+      }
+
+    </ul>
+  </div>
+</div>

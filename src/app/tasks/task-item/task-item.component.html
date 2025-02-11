@@ -1,0 +1,12 @@
+<article class="task-item mb-3 shadow-sm p-3 rounded-4">
+  <h3>{{ data.title }}</h3>
+  <time>{{ data.due_date }}, 23 feb 2025</time>
+  <p>{{
+      data.description
+    }}</p>
+
+  <div class="text-end">
+    <button type="button" class="btn btn-light px-3 rounded-4" (click)="complete()">Complete </button>
+  </div>
+
+</article>
